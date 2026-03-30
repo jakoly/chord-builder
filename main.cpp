@@ -1,16 +1,20 @@
-#include <iostream>
-#include <cstdlib>
+#include "centered.h"
+#include <vector>
 
-void clear() {
-    #ifdef _WIN32
+void clearConsole() {
     std::system("cls");
-    #else
-        std::system("clear");
-    #endif
 }
 
 int main() {
-    clear();
-    std::cout << "Hello, World!" << std::endl;
+    clearConsole();
+
+    printCenteredBlock({
+        "Hallo Welt!",
+        "",
+        "Dies ist ein zentrierter Text.",
+        "Mehrere Zeilen funktionieren jetzt."
+    });
+
+    std::cin.get();
     return 0;
 }
